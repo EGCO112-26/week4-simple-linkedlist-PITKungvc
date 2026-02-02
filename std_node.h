@@ -9,6 +9,6 @@ struct std_node
 };
 
 typedef struct std_node Node;
-typedef STD NodePtr;
+typedef struct std_node* NodePtr;
 
 #endif /*node_h*/
