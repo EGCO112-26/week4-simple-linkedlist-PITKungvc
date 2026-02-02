@@ -21,23 +21,25 @@ int main(int argc, const char * argv[]) {
             return 1;
         }
 
-        NodePtr head = NULL, temp = NULL, last = NULL;
+        NodePtr head = NULL, temp = NULL;
 
         int n=(argc-1)/2;
         for(int i = 0; i < n; i++)
         {
-            temp = (NodePtr)malloc(sizeof(Node));
-            if (temp == NULL) break;
+            NodePtr Newnode = (NodePtr)malloc(sizeof(Node));
+            if (Newnode == NULL) break;
 
-            temp->id = atoi(argv[(i*2)+1]);
-            strcpy(temp->name, argv[(i*2)+2]); // copy string ชื่อ
-            temp->next = NULL;
+            Newnode->id = atoi(argv[(i*2)+1]);
+            strcpy(Newnode->name, argv[(i*2)+2]); // copy string ชื่อ
+            Newnode->next = NULL;
+
             if (head == NULL) {
-                head = temp; // Node แรกเป็น head
+                head = Newnode;
+                temp = head;
             } else {
-                last->next = temp; // เชื่อมต่อจากตัวก่อนหน้า
+                temp->next = Newnode;
+                temp = temp->next;
             }
-            last = temp; // ขยับตัวชี้ท้ายสุดมาที่ node ปัจจุบัน
         }
 
 
