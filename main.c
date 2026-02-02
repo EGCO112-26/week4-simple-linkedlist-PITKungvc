@@ -16,10 +16,6 @@ int main(int argc, const char * argv[]) {
          //use a loop to help
           
      */
-        if (argc < 3) {
-            printf("Usage: %s <id1> <name1> <id2> <name2> ...\n", argv[0]);
-            return 1;
-        }
 
         NodePtr head = NULL, temp = NULL;
 
